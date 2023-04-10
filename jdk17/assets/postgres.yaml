@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  postgesql:
+    image: postgres:15-alpine
+    container_name: postgresql
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test
+      - POSTGRES_HOST=5432
+    command: -p 5432
+    volumes:
+      - /opt/pg_data:/var/lib/postgresql/data:z
+    networks: [ "pg" ]
+
+networks:
+  pg:
+    name: pg
