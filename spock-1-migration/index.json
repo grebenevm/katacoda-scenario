@@ -1,0 +1,52 @@
+{
+  "pathwayTitle": "Migration to Spock - Demo",
+  "title": "Migration to Spock - Demo",
+  "description": "Migration to Spock - Demo",
+  "difficulty": "beginner",
+  "time": "30 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Задание",
+        "text": "step-1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": ""
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "pom.xml",
+          "target": "/root/",
+          "chmod": "+x"
+        },
+        {
+          "file": "CalculatorService.java",
+          "target": "/root/src/main/java/spock/course/migration/calc/service/",
+          "chmod": "+x"
+        },
+        {
+          "file": "CalculatorServiceTest.java",
+          "target": "/root/src/test/java/spock/course/migration/calc/",
+          "chmod": "+x"
+        }
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "files": [],
+  "environment": {
+    "uilayout": "terminal",
+    "uisettings": "yaml",
+    "showide": true,
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n",
+    "uimessage2": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "jdk17"
+  }
+}
