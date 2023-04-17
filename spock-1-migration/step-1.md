@@ -27,12 +27,17 @@ ____
 mvn clean test verify
 ```{{execute}}
 ```
-
-Убедимся, что в консоли получили: BUILD SUCCESS
-
-И выше в логах: Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
 ____
-Посмотрим на html-отчёт **jacoco-maven-plugin** в файле `./target/site/jacoco/index.html`
+
+Убедимся, что в консоли получили:
+
+**_BUILD SUCCESS_**
+
+И выше в логах:
+
+**_Tests run: 3, Failures: 0, Errors: 0, Skipped: 0_**
+____
+Посмотрим на html-отчёт **jacoco-maven-plugin** в файле `jacoco.index.html`
     `./target/site/jacoco/index.html`{{open}}
 ____
 С приложением разобрались. Переходим к доработкам...
