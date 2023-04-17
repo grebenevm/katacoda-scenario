@@ -10,10 +10,6 @@ public class CalculatorService {
         return (long)x - y;
     }
 
-    public long divide(int x, int y) {
-        return x / y;
-    }
-
     public long pow(int x, int y) {
         long result = x;
         while(y-- > 1) {

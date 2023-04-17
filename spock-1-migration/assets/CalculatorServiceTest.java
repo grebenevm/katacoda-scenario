@@ -26,11 +26,6 @@ class CalculatorServiceTest {
     }
 
     @Test
-    void divide() {
-        assertEquals(12L, service.divide(24, 2));
-    }
-
-    @Test
     void pow() {
         assertEquals(16L, service.pow(2, 4));
     }

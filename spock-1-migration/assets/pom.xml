@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>spock.course.migration</groupId>
@@ -12,54 +12,12 @@
 		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
 		<java.version>17</java.version>
-		<lombok.version>1.18.26</lombok.version>
-		<h2.version>2.1.214</h2.version>
-		<byte.buddy.version>1.14.4</byte.buddy.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.spockframework</groupId>
-			<artifactId>spock-core</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.spockframework</groupId>
-			<artifactId>spock-junit4</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.groovy</groupId>
-			<artifactId>groovy</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.groovy</groupId>
-			<artifactId>groovy-sql</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency> <!-- enables mocking of classes (in addition to interfaces) -->
-			<groupId>net.bytebuddy</groupId>
-			<artifactId>byte-buddy</artifactId>
-			<version>${byte.buddy.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>${h2.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -73,21 +31,6 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<!-- The gmavenplus plugin is used to compile Groovy code. To learn more about this plugin,
-                visit https://github.com/groovy/GMavenPlus/wiki -->
-				<groupId>org.codehaus.gmavenplus</groupId>
-				<artifactId>gmavenplus-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>compileTests</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>
@@ -118,13 +61,16 @@
 								<rule>
 									<element>CLASS</element>
 									<includes>
-										<include>spock.course.migration.calc.service.CalculatorService</include>
+										<include>spock.course.migration.calc.service</include>
 									</includes>
+									<excludes>
+										<exclude>*Application.java</exclude>
+									</excludes>
 									<limits>
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>80%</minimum>
+											<minimum>90%</minimum>
 										</limit>
 									</limits>
 								</rule>
@@ -135,8 +81,6 @@
 			</plugin>
 
 			<plugin>
-				<!-- Optional plugins for using Spock -->
-				<!-- Only required if names of spec classes don't match default Surefire patterns (`*Test` etc.) -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
@@ -146,19 +90,12 @@
 					<printSummary>true</printSummary>
 					<includes>
 						<include>**/*Test</include>
-						<include>**/*Spec</include>
 					</includes>
 				</configuration>
 				<executions>
 					<execution>
 						<id>check-test</id>
 						<phase>test</phase>
-						<configuration>
-							<includes>
-								<include>**/*Test</include>
-								<include>**/*Spec</include>
-							</includes>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -181,31 +118,12 @@
 					<artifactId>maven-surefire-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
-				<plugin>
-					<groupId>org.codehaus.gmavenplus</groupId>
-					<artifactId>gmavenplus-plugin</artifactId>
-					<version>2.1.0</version>
-				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>org.spockframework</groupId>
-				<artifactId>spock-bom</artifactId>
-				<version>2.3-groovy-4.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.groovy</groupId>
-				<artifactId>groovy-bom</artifactId>
-				<version>4.0.9</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
 			<dependency>
 				<groupId>org.junit</groupId>
 				<artifactId>junit-bom</artifactId>
