@@ -83,6 +83,8 @@ class CalculatorServiceSpockSpec extends Specification {
 <include>**/*Spec</include>
 </pre>
 ---
+### Проверка
+
 Теперь убедимся, что приложение собирается без ошибок.
 
 Выполним команду:
