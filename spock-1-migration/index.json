@@ -13,6 +13,10 @@
       {
         "title": "Доработка приложения",
         "text": "step-2.md"
+      },
+      {
+        "title": "Добавление Spock-dependencies",
+        "text": "step-3.md"
       }
     ],
     "intro": {
