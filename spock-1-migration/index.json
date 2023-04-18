@@ -38,7 +38,7 @@
         {
           "file": "CalculatorServiceTest.java",
           "target": "/root/src/test/java/spock/course/migration/calc/",
-          "chmod": "+x-w"
+          "chmod": "+x"
         }
       ]
     },

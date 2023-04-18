@@ -33,7 +33,9 @@ ____
 
 **_Tests run: 3, Failures: 0, Errors: 0, Skipped: 0_**
 ____
-Посмотрим на html-отчёт **jacoco-maven-plugin** в файле `jacoco.index.html`
-    `./target/site/jacoco/index.html`{{open}}
+Посмотрим на csv-отчёт плагина **jacoco-maven-plugin** в файле `./target/site/jacoco/jacoco.csv`
+Увидим, что все строки кода покрыты тестами. Выход из просмотра - клавиша "Q".
+
+    `column -s -t < ./target/site/jacoco/jacoco.csv | less -#2 -N -S`{{execute}}
 ____
 С приложением разобрались. Переходим к доработкам...
