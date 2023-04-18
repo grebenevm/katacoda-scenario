@@ -15,7 +15,8 @@ ____
 <pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="        <!--d1-->">
         <dependency>
             <groupId>org.spockframework</groupId>
-            <artifactId>spock-core\</artifactId>
+            <artifactId>spock-core</artifactId>
+            <version>2.3-groovy-4.0</version>
             <scope>test</scope>
         </dependency>
 </pre>
@@ -26,7 +27,7 @@ ____
     <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
         <groupId>net.bytebuddy</groupId>
         <artifactId>byte-buddy</artifactId>
-        <version>${byte.buddy.version}</version>
+        <version>1.14.4</version>
         <scope>test</scope>
     </dependency>
 </pre>
@@ -53,6 +54,7 @@ ____
 `mkdir -p src/test/groovy/spock/course/migration/calc && touch src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
 
 и создадим тест
+
 <pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="">
 package spock.course.migration.calc
 
