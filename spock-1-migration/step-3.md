@@ -73,3 +73,8 @@ class CalculatorServiceSpockSpec extends Specification {
 
 }
 </pre>
+---
+Теперь убедимся, что приложение собирается без ошибок.
+
+Выполним команду:
+`mvn clean test verify`{{execute}}
