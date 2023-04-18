@@ -10,10 +10,10 @@ ____
 ____
 Реализуем метод `public long divide(int x, int y)`
 
-<pre class="file" data-filename="./src/main/java/spock/course/migration/calc/service/CalculatorService.java" data-target="insert" data-marker="//------------->">
-public long divide(int x, int y) {
-    return x / y;
-}
+<pre class="file" data-filename="./src/main/java/spock/course/migration/calc/service/CalculatorService.java" data-target="insert" data-marker="    //------------->">
+    public long divide(int x, int y) {
+        return x / y;
+    }
 </pre>
 
 ----
