@@ -1,0 +1,9 @@
+____
+## Подведём итоги
+____
+Посмотрим на csv-отчёт плагина **jacoco-maven-plugin** в файле `./target/site/jacoco/jacoco.csv`
+Увидим, что все строки кода покрыты тестами: столбец `LINE_MISSED` = 0.
+Просмотр отчёта: клавиши "влево", "право". Выход - клавиша "Q".
+
+    `column -s, -t < ./target/site/jacoco/jacoco.csv | less -#2 -N -S`{{execute}}
+____
