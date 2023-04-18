@@ -61,7 +61,7 @@
 								<rule>
 									<element>CLASS</element>
 									<includes>
-										<include>spock.course.migration.calc.service</include>
+										<include>spock.course.migration.calc.service.*</include>
 									</includes>
 									<excludes>
 										<exclude>*Application.java</exclude>
