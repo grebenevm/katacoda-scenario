@@ -1,9 +1,7 @@
-## Сборка приложения
-
-### Кратко
+## Кратко
 Добавим метод деления чисел divide(int x, int y) в `CalculatorService.java`
 ____
-### Детализация задания
+## Детализация шага
 ____
 Откроем сервис, `CalculatorService.java`
     `src/main/java/spock/course/migration/calc/service/CalculatorService.java`{{open}}
@@ -22,7 +20,7 @@ ____
 Для этого выполним команду:
 `mvn clean test verify`{{execute}}
 
-### Проверка
+## Проверка
 
 Убедимся, что в консоли получили ошибку при сборке:
 
