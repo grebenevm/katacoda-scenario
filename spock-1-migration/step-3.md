@@ -57,7 +57,7 @@ ____
 `src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{open}}
 
 и создадим тест
-<pre class="file" data-filename="./src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy" data-target="insert" data-marker="-">
+<pre class="file" data-filename="./src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy" data-target="insert" data-marker="//">
 package spock.course.migration.calc
 
 import spock.course.migration.calc.service.CalculatorService
