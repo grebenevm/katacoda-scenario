@@ -12,7 +12,7 @@ ____
 ____
 Добавим зависимость org.spockframework:spock-core в `pom.xml`
 
-<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="        <!--d1-->">
+<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="<!--d1-->">
 <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
@@ -23,8 +23,8 @@ ____
 ____
 Добавим зависимость net.bytebuddy:byte-buddy в `pom.xml`
 
-<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="        <!--d2-->">
-    <dependency> <!-- enables mocking of classes (in addition to interfaces) -->
+<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="<!--d2-->">
+<dependency> <!-- enables mocking of classes (in addition to interfaces) -->
         <groupId>net.bytebuddy</groupId>
         <artifactId>byte-buddy</artifactId>
         <version>1.14.4</version>
@@ -34,8 +34,8 @@ ____
 ____
 Добавим зависимость org.codehaus.gmavenplus:gmavenplus-plugin в `pom.xml`
 
-<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="            <!--p1-->">
-            <plugin>
+<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="<!--p1-->">
+<plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
                 <version>2.1.0</version>
@@ -51,7 +51,7 @@ ____
 </pre>
 ---
 Теперь добавим spock-тест `spock.course.migration.calc.CalculatorServiceSpockSpec` в директорию `src/test/groovy`
-`mkdir -p src/test/groovy/spock/course/migration/calc && && echo "-" > src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
+`mkdir -p src/test/groovy/spock/course/migration/calc && echo "-" > src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
 
 и создадим тест
 
@@ -76,7 +76,7 @@ class CalculatorServiceSpockSpec extends Specification {
 }
 </pre>
 ---
-Еще нужно добавить в настройки плагина `maven-surefire-plugin` фильтр для `*Spec`-тестов.
+Также нужно добавить в настройки плагина `maven-surefire-plugin` фильтр для `*Spec`-тестов.
 Сделаем это:
 
 <pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="<!--filter-->">
