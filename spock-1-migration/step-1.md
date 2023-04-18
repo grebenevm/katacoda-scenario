@@ -34,8 +34,9 @@ ____
 **_Tests run: 3, Failures: 0, Errors: 0, Skipped: 0_**
 ____
 Посмотрим на csv-отчёт плагина **jacoco-maven-plugin** в файле `./target/site/jacoco/jacoco.csv`
-Увидим, что все строки кода покрыты тестами. Выход из просмотра - клавиша "Q".
+Увидим, что все строки кода покрыты тестами: столбец `LINE_MISSED` = 0.
+Работа с отчётом: клавиши "влево", "право". Выход - клавиша "Q".
 
-    `column -s -t < ./target/site/jacoco/jacoco.csv | less -#2 -N -S`{{execute}}
+    `column -s, -t < ./target/site/jacoco/jacoco.csv | less -#2 -N -S`{{execute}}
 ____
 С приложением разобрались. Переходим к доработкам...
