@@ -28,6 +28,14 @@ ____
 
 **_BUILD FAILED_**
 
+Также в логах увидим сообщения:
+```
+[WARNING] Rule violated for class spock.course.migration.calc.service.CalculatorService: lines covered ratio is 0.87, but expected minimum is 0.90
+
+Coverage checks have not been met. See log for details.
+```
+
+Это говорит о том, что после добавления метода, процент покрытия кода тестами меньше указанных 90%. Поэтому сборка падает.
+
 ----
-Перейдём на следующий шаг для доработки тестов под новый метод
-`divide(int x, int y)`
+Перейдём на следующий шаг для доработки тестов под новый метод `divide(int x, int y)`
