@@ -51,10 +51,12 @@ ____
 </pre>
 ---
 Теперь добавим spock-тест `spock.course.migration.calc.CalculatorServiceSpockSpec` в директорию `src/test/groovy`
-`mkdir -p src/test/groovy/spock/course/migration/calc && echo "-" > src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
+`mkdir -p src/test/groovy/spock/course/migration/calc && echo "//" > src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
+
+откроем его
+`src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{open}}
 
 и создадим тест
-
 <pre class="file" data-filename="./src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy" data-target="insert" data-marker="-">
 package spock.course.migration.calc
 
@@ -89,5 +91,19 @@ class CalculatorServiceSpockSpec extends Specification {
 
 Выполним команду:
 `mvn clean test verify`{{execute}}
+---
+Убедимся по логам, что выполняются как Java-JUnit-тесты, так и Groovy-Spock-тесты.
+
+В логах должна быть информация:
+```
+[INFO] Running spock.course.migration.calc.CalculatorServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] Running spock.course.migration.calc.CalculatorServiceSpockSpec
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] Results:
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+```
 ---
 Подведём итоги на следующем шаге.
