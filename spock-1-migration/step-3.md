@@ -13,7 +13,7 @@ ____
 Добавим зависимость org.spockframework:spock-core в `pom.xml`
 
 <pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="        <!--d1-->">
-        <dependency>
+<dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
             <version>2.3-groovy-4.0</version>
@@ -51,11 +51,11 @@ ____
 </pre>
 ---
 Теперь добавим spock-тест `spock.course.migration.calc.CalculatorServiceSpockSpec` в директорию `src/test/groovy`
-`mkdir -p src/test/groovy/spock/course/migration/calc && touch src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
+`mkdir -p src/test/groovy/spock/course/migration/calc && && echo "-" > src/test/groovy/spock/course/migration/calc/CalculatorServiceSpockSpec.groovy`{{execute}}
 
 и создадим тест
 
-<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="">
+<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="-">
 package spock.course.migration.calc
 
 import spock.course.migration.calc.service.CalculatorService
@@ -74,6 +74,13 @@ class CalculatorServiceSpockSpec extends Specification {
     }
 
 }
+</pre>
+---
+Еще нужно добавить в настройки плагина `maven-surefire-plugin` фильтр для `*Spec`-тестов.
+Сделаем это:
+
+<pre class="file" data-filename="./pom.xml" data-target="insert" data-marker="<!--filter-->">
+<include>**/*Spec</include>
 </pre>
 ---
 Теперь убедимся, что приложение собирается без ошибок.

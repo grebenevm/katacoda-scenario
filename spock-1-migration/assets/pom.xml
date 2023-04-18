@@ -91,6 +91,7 @@
                     <failIfNoTests>true</failIfNoTests>
                     <printSummary>true</printSummary>
                     <includes>
+                        <!--filter-->
                         <include>**/*Test</include>
                     </includes>
                 </configuration>
